@@ -1,0 +1,548 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Renah Wolzinger, Ed.D. - AI Expert in Education & Film Composer</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            color: #333;
+            overflow-x: hidden;
+            background: #f8f9fa;
+        }
+
+        .hero {
+            height: 100vh;
+            background-image: url('background.jpg');
+            background-size: cover;
+            background-position: center;
+            background-attachment: fixed;
+            position: relative;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .hero::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: rgba(0, 30, 60, 0.75);
+        }
+
+        nav {
+            position: fixed;
+            top: 0;
+            width: 100%;
+            padding: 1.5rem 5%;
+            background: rgba(255, 255, 255, 0.98);
+            backdrop-filter: blur(10px);
+            z-index: 1000;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+        }
+
+        .nav-content {
+            max-width: 1400px;
+            margin: 0 auto;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo {
+            font-size: 1.5rem;
+            font-weight: bold;
+            color: #1e3a5f;
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 2.5rem;
+            list-style: none;
+        }
+
+        .nav-links a {
+            color: #1e3a5f;
+            text-decoration: none;
+            font-size: 1.1rem;
+            transition: all 0.3s ease;
+            position: relative;
+            font-weight: 500;
+        }
+
+        .nav-links a::after {
+            content: '';
+            position: absolute;
+            bottom: -5px;
+            left: 0;
+            width: 0;
+            height: 2px;
+            background: #2563eb;
+            transition: width 0.3s ease;
+        }
+
+        .nav-links a:hover {
+            color: #2563eb;
+        }
+
+        .nav-links a:hover::after {
+            width: 100%;
+        }
+
+        .hero-content {
+            position: relative;
+            z-index: 1;
+            flex: 1;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            padding: 2rem;
+            margin-top: 80px;
+        }
+
+        h1 {
+            font-size: 4rem;
+            margin-bottom: 1rem;
+            color: #fff;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
+        }
+
+        .subtitle {
+            font-size: 1.8rem;
+            margin-bottom: 1rem;
+            color: #e0e7ff;
+            text-shadow: 1px 1px 2px rgba(0,0,0,0.3);
+        }
+
+        .subtitle2 {
+            font-size: 1.5rem;
+            margin-bottom: 3rem;
+            color: #c7d2fe;
+            text-shadow: 1px 1px 2px rgba(0,0,0,0.3);
+        }
+
+        section {
+            padding: 5rem 5%;
+            position: relative;
+        }
+
+        .section-white {
+            background: #ffffff;
+        }
+
+        .section-light {
+            background: #f8f9fa;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        h2 {
+            font-size: 2.8rem;
+            margin-bottom: 2rem;
+            text-align: center;
+            color: #1e3a5f;
+            font-weight: 600;
+        }
+
+        .roles {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+            margin-top: 3rem;
+        }
+
+        .role-card {
+            background: #ffffff;
+            border: 1px solid #e5e7eb;
+            border-radius: 12px;
+            padding: 2rem;
+            transition: all 0.3s ease;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.08);
+        }
+
+        .role-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 8px 20px rgba(37, 99, 235, 0.15);
+            border-color: #2563eb;
+        }
+
+        .role-card h3 {
+            font-size: 1.4rem;
+            margin-bottom: 1rem;
+            color: #1e3a5f;
+            font-weight: 600;
+        }
+
+        .role-card p {
+            line-height: 1.7;
+            color: #4b5563;
+        }
+
+        .role-card a {
+            color: #2563eb;
+            text-decoration: none;
+            font-weight: 600;
+        }
+
+        .role-card a:hover {
+            text-decoration: underline;
+        }
+
+        .video-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+            gap: 2rem;
+            margin-top: 3rem;
+        }
+
+        .video-container {
+            position: relative;
+            padding-bottom: 56.25%;
+            height: 0;
+            overflow: hidden;
+            border-radius: 12px;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+            transition: all 0.3s ease;
+            background: #f3f4f6;
+        }
+
+        .video-container:hover {
+            box-shadow: 0 8px 24px rgba(0,0,0,0.15);
+            transform: translateY(-3px);
+        }
+
+        .video-container iframe {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            border-radius: 12px;
+        }
+
+        .publications-content {
+            max-width: 1000px;
+            margin: 0 auto;
+            background: #ffffff;
+            border-radius: 12px;
+            padding: 3rem;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.08);
+        }
+
+        .publications-content h3 {
+            color: #1e3a5f;
+            font-size: 1.8rem;
+            margin-bottom: 1.5rem;
+            font-weight: 600;
+        }
+
+        .publications-content h4 {
+            color: #2563eb;
+            margin-top: 2.5rem;
+            margin-bottom: 1rem;
+            font-size: 1.3rem;
+            font-weight: 600;
+            border-bottom: 2px solid #e5e7eb;
+            padding-bottom: 0.5rem;
+        }
+
+        .publications-content p {
+            margin-bottom: 1rem;
+            line-height: 1.8;
+            color: #4b5563;
+        }
+
+        .publications-content a {
+            color: #2563eb;
+            text-decoration: none;
+            font-weight: 500;
+        }
+
+        .publications-content a:hover {
+            text-decoration: underline;
+        }
+
+        .publications-content em {
+            font-style: italic;
+            color: #374151;
+        }
+
+        .cta-button {
+            display: inline-block;
+            padding: 1rem 2.5rem;
+            background: #2563eb;
+            color: #fff;
+            text-decoration: none;
+            border-radius: 8px;
+            font-size: 1.2rem;
+            font-weight: 600;
+            transition: all 0.3s ease;
+            border: none;
+            cursor: pointer;
+            box-shadow: 0 4px 12px rgba(37, 99, 235, 0.3);
+        }
+
+        .cta-button:hover {
+            background: #1d4ed8;
+            transform: translateY(-2px);
+            box-shadow: 0 6px 16px rgba(37, 99, 235, 0.4);
+        }
+
+        footer {
+            background: #1e3a5f;
+            padding: 2rem 5%;
+            text-align: center;
+            color: #e0e7ff;
+        }
+
+        @media (max-width: 768px) {
+            h1 {
+                font-size: 2.5rem;
+            }
+            
+            .subtitle {
+                font-size: 1.3rem;
+            }
+            
+            .subtitle2 {
+                font-size: 1.1rem;
+            }
+            
+            .nav-links {
+                gap: 1rem;
+                font-size: 0.95rem;
+            }
+            
+            .video-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .publications-content {
+                padding: 2rem 1.5rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <nav>
+        <div class="nav-content">
+            <div class="logo">Renah Wolzinger</div>
+            <ul class="nav-links">
+                <li><a href="#home">Home</a></li>
+                <li><a href="#about">About</a></li>
+                <li><a href="#portfolio">Portfolio</a></li>
+                <li><a href="#publications">Publications</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <section class="hero" id="home">
+        <div class="hero-content">
+            <h1>Renah Wolzinger, Ed.D.</h1>
+            <p class="subtitle">Artificial Intelligence Expert in Education</p>
+            <p class="subtitle2">Film Composer, Professional Musician</p>
+        </div>
+    </section>
+
+    <section class="section-white" id="about">
+        <div class="container">
+            <h2>About</h2>
+            <div class="roles">
+                <div class="role-card">
+                    <h3>Technical Director at <a href="https://www.eduvators.net/" target="_blank">Eduvators</a></h3>
+                    <p>Leading AI education initiatives, curating classes, and conducting workshops for educators while offering comprehensive AI certifications.</p>
+                </div>
+                <div class="role-card">
+                    <h3>AI for Educators and Content Creators</h3>
+                    <p>Empowering educators and creators with cutting-edge AI tools and methodologies to transform teaching and content creation.</p>
+                </div>
+                <div class="role-card">
+                    <h3>Recording Academy - 25 Year Voting Member</h3>
+                    <p>Dedicated member contributing to the music industry's most prestigious organization for over two decades.</p>
+                </div>
+                <div class="role-card">
+                    <h3>Society of Composers and Lyricists - Voting Member</h3>
+                    <p>Active participant in the professional community of film, television, and musical theater composers.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="section-light" id="portfolio">
+        <div class="container">
+            <h2>Portfolio</h2>
+            <div class="video-grid">
+                <div class="video-container">
+                    <iframe src="https://www.youtube.com/embed/videoseries?si=fu8qrSN8_KkAeLOp&amp;list=PLd8Y_JXZUgbDWueSakM0fBeIjGdC5GTop" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+                </div>
+                <div class="video-container">
+                    <iframe src="https://www.youtube.com/embed/videoseries?si=L7qfGs4J0wSvD0dQ&amp;list=PL_oUSBLlhB2qI29rQ-oNP4zLPmQV6qEIv" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+                </div>
+                <div class="video-container">
+                    <iframe src="https://www.youtube.com/embed/wno_CXohOsw?si=cnKypoMQEKsifrI7" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+                </div>
+                <div class="video-container">
+                    <iframe src="https://www.youtube.com/embed/zre17mncjL0?si=2yNKM9Grra4N6qA3" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+                </div>
+                <div class="video-container">
+                    <iframe src="https://www.youtube.com/embed/wJBrYKbmZ1I?si=ZN-hLlbjkms5mJ91" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+                </div>
+                <div class="video-container">
+                    <iframe src="https://www.youtube.com/embed/HnRQ-DJ7pjI?si=sT5cOeZl-o7QYr6Z" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+                </div>
+                <div class="video-container">
+                    <iframe src="https://www.youtube.com/embed/tmoQiAUqR3o?si=bJ1wn_Rve9yL6HHT" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+                </div>
+                <div class="video-container">
+                    <iframe src="https://player.vimeo.com/video/28637197?badge=0&amp;autopause=0&amp;player_id=0&amp;app_id=58479" frameborder="0" allow="autoplay; fullscreen; picture-in-picture; clipboard-write; encrypted-media; web-share" referrerpolicy="strict-origin-when-cross-origin" title="Heather Joseph-Witham Ph.D. Mythbusters highlights"></iframe>
+                </div>
+                <div class="video-container">
+                    <iframe src="https://player.vimeo.com/video/808134459?badge=0&amp;autopause=0&amp;player_id=0&amp;app_id=58479" frameborder="0" allow="autoplay; fullscreen; picture-in-picture; clipboard-write; encrypted-media; web-share" referrerpolicy="strict-origin-when-cross-origin" title="Down and Out in Vampire Hills 1080.m4v"></iframe>
+                </div>
+                <div class="video-container">
+                    <iframe src="https://www.youtube.com/embed/p4i_Q2NS_PQ?si=eg5HQKqmuVr88obI" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="section-white" id="publications">
+        <div class="container">
+            <h2>Publications</h2>
+            <div class="publications-content">
+                <h3>Selected Publications, Copyrights and Patents</h3>
+                <p style="margin: 1rem 0 2rem 0;">View my complete research profile on <a href="https://scholar.google.com/scholar?hl=en&as_sdt=2007&q=wolzinger+&btnG=" target="_blank">Google Scholar</a></p>
+                
+                <h4>Publications</h4>
+                
+                <p>Wolzinger, R., & O'Lawrence, H. (2019). An analysis of the associate degree transfer readiness in the California Community Colleges. <em>Workforce Education Forum</em> (Vol. 39, No. 1), 36-42</p>
+                
+                <p>Wolzinger, R., & O'Lawrence, H. (2018). Student Characteristics and Enrollment in a CTE Pathway Predict Transfer Readiness. <em>Pedagogical Research</em> 3(2), 8-16. Available at <a href="https://files.eric.ed.gov/fulltext/EJ1182590.pdf" target="_blank">https://files.eric.ed.gov/fulltext/EJ1182590.pdf</a></p>
+                
+                <p>Wolzinger, R. (2017). <em>Equity in Transfer for Career and Technical Education Students in the California Community College System</em> [Doctoral Dissertation]. Fullerton, CA: California State University, Fullerton.</p>
+                
+                <p>O'Lawrence, H., & Wolzinger, R. (2013). Strengthening career and technical education in the California community college system: An implication for workforce development in the 21st century. In H. O'Lawrence, <em>The historical critique of career and technical education in California from 1900–2000 and the status of California community colleges in the 21st century</em> (pp. 179-192). Santa Rosa, CA: Informing Science Press.</p>
+                
+                <p>Wolzinger, R., & O'Lawrence, H. (2011). Strengthening career and technical education in the California community college system: An implication for workforce development in the 21st century. <em>International Journal of Vocational Education and Training</em> 19(2), 23-33. Available at <a href="http://hdl.voced.edu.au/10707/193832" target="_blank">http://hdl.voced.edu.au/10707/193832</a></p>
+                
+                <p>Wolzinger, R. (2011). <em>Strengthening college programs in career and technical education: Analysis and recommendations for improving CTE in the California community college system</em> [German language eBook]. Saarbrücken: VDM Verlag Dr. Müller.</p>
+                
+                <p>Wolzinger, R. (2011). <em>Strengthening Career and Technical Education in the California Community College System during the financial and labor market crisis</em> (Master's thesis). Long Beach: California State University, Long Beach.</p>
+                
+                <p>Joseph-Witham, H., & Wolzinger, R. (Producers), & Joseph-Witham, H., & Wolzinger, R. (Directors). (2009). <em>Visiting Vampires in the Big Easy</em> [Documentary/Video]. USA: Renzone Music.</p>
+                
+                <h4>Patents</h4>
+                
+                <p><strong>Apparatus and methods for protecting indwelling medical devices</strong><br>
+                Patent Number: US 5,605,546 | Date: February 25, 1997<br>
+                Inventors: Renah Wolzinger, E. Joseph</p>
+                
+                <p><strong>Catheter with rapid response thermistor and method</strong><br>
+                Patent Number: US 5,271,410 | Date: December 21, 1993<br>
+                Inventors: Renah Wolzinger, Su S. Soong-Wu<br>
+                Assignee: Baxter International Inc.</p>
+                
+                <p><strong>Ophthalmic drape with fluid collection pouch</strong><br>
+                Inventors: Renah Wolzinger, Su S. Soong-Wu<br>
+                Assignee: Baxter International Inc.</p>
+                
+                <h4>Medical Research</h4>
+                
+                <p>Davies, R. J., Joseph (Wolzinger), R., Asbun, H., & Sedwitz, M. (1989, April). Detection of the cancer-prone colon, using transepithelial impedance analysis. <em>Archives of Surgery</em>, 124(4), 480-484.</p>
+                
+                <p>Davies, R. J., Joseph (Wolzinger), R., Kaplan, D., Juncosa, R. D., Pempinello, C., Asbun, H., & Sedwitz, M. M. (1987, November). Epithelial impedance analysis in experimentally induced colon cancer. <em>Biophysical Journal</em>, 52(5), 783-790. DOI: <a href="http://dx.doi.org/10.1016/S0006-3495(87)83272-1" target="_blank">http://dx.doi.org/10.1016/S0006-3495(87)83272-1</a></p>
+                
+                <h4>Presentations & Public Appearances</h4>
+                
+                <p><strong>EON Experience Fest 2023</strong> (Irvine, CA)<br>
+                Panelist - "Breaking Barriers: Innovative Learning Solutions from EON Reality Partners"</p>
+                
+                <p><strong>Comic Con Industry Event</strong> (San Diego, CA)<br>
+                Panelist</p>
+                
+                <p><strong>14th Annual Technology in Education Conference and Exposition</strong> (Ontario, CA, 2009)<br>
+                Presenter - "Interdisciplinary Studies in New Media for Community College Students"</p>
+                
+                <p>Wolzinger, R. (2017, April). Equity in Transfer for Career and Technical Education Students in the California Community College System. Presentation at Council for the Study of Community Colleges, Fort Worth, TX.</p>
+                
+                <p>Wolzinger, R. (2017, April). Non-Degree Credentials in state longitudinal data systems. Presentation at Lumina Foundation, Indianapolis, IN.</p>
+                
+                <p>Wolzinger, R. (2017, April). Industry certifications in California Community Colleges. Presentation of Certification Data Exchange Project (CDEP) at Department of Education, Washington, DC.</p>
+                
+                <p>Wolzinger, R. (2017, March). Industry Credential Pilots in California. Presentation at Educating for Careers Conference, Sacramento, CA.</p>
+                
+                <p>Wolzinger, R. (2016, Nov.). Industry Credentials for Alaska's Workforce. Presentation at Alaska Process Industry Careers Consortium, Anchorage, AK.</p>
+                
+                <p>Wolzinger, R. (2016, Oct.). Strong Workforce Program for California. Presentation at National Council for Workforce Education, Atlanta, GA.</p>
+                
+                <p>Wolzinger, R. (2016, Oct.). State longitudinal data systems. Presentation at Data Quality Institute, Washington, DC.</p>
+                
+                <h4>Filmography</h4>
+                
+                <p><strong>Down and Out in Vampire Hills</strong> (2023)<br>
+                Actor - Character: Ramona</p>
+                
+                <p><strong>Running Against Time</strong> (1990)<br>
+                Actor</p>
+                
+                <h4>Music</h4>
+                
+                <p><strong>Professional Roles:</strong> Founder of Renzone Music | Publisher and Writer member of ASCAP | Voting member of NARAS (The Grammy organization) | Performer (vocalist, clarinetist, bass guitar player) with bands including the South Coast Simcha Band and the South Coast Party Machine</p>
+                
+                <p><strong>Discography (as Renah Wolzinger):</strong><br>
+                • <em>Down and out in Vampire Hills</em> (2022)<br>
+                • <em>Tumble-n-Tunes</em> (2003) with Dayle Lusk<br>
+                • <em>Songs from the Sea to the Shore</em> (1998)</p>
+                
+                <p><strong>Discography (with South Coast Simcha Band):</strong><br>
+                • <em>Yiddish America</em> (2006) - Included in the 2007 Grammy balloting for "Best Traditional World Music Album"<br>
+                • <em>Classic American Klezmer</em> (2004)</p>
+            </div>
+        </div>
+    </section>
+
+    <section class="section-light" id="contact">
+        <div class="container" style="text-align: center;">
+            <h2>Contact</h2>
+            <p style="font-size: 1.2rem; color: #4b5563; margin-bottom: 2rem; max-width: 700px; margin-left: auto; margin-right: auto;">
+                Get in touch to discuss AI education, workshops, or collaboration opportunities.
+            </p>
+            <a href="mailto:rwolzinger@gmail.com" class="cta-button">Contact Me</a>
+        </div>
+    </section>
+
+    <footer>
+        <p>&copy; 2024 Renah Wolzinger, Ed.D. All rights reserved.</p>
+    </footer>
+
+    <script>
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    target.scrollIntoView({
+                        behavior: 'smooth',
+                        block: 'start'
+                    });
+                }
+            });
+        });
+    </script>
+</body>
+</html>
